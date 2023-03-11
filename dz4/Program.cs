@@ -15,7 +15,7 @@ namespace Classes
         private string lastName;
         private string phone;
         private string adress;
-        private string birthday;
+        private DateTime birthday;
         private List<Int32> homeworkMarks;
         private List<Int32> creditMarks;
         private List<Int32> examMarks;
@@ -28,14 +28,14 @@ namespace Classes
             setLastName("Vitalievich");
             setPhone("9229103");
             setAdress("6353 Juan Tabo");
-            setBirthday("11.05.2005");
+            setBirthday(DateTime.Now);
             homeworkMarks = new List<Int32>() { 4, 4, 5, 4 };
             creditMarks = new List<Int32>() { 3, 4, 4, 5 };
             examMarks = new List<Int32>() { 5, 5, 5, 3 };
         }
 
         //Constructor with parameters
-        public Student(string name, string surname, string lastName, string phone, string adress, string birthday, List<Int32> homework, List<Int32> credit, List<Int32> exam)
+        public Student(string name, string surname, string lastName, string phone, string adress, DateTime birthday, List<Int32> homework, List<Int32> credit, List<Int32> exam)
         {
             setName(name);
             setSurname(surname);
@@ -54,7 +54,7 @@ namespace Classes
         public void setLastName(string lastName) { this.lastName = lastName; }
         public void setPhone(string phone) { this.phone = phone; }
         public void setAdress(string adress) { this.adress = adress; }
-        public void setBirthday(string birthday) { this.birthday = birthday; }
+        public void setBirthday(DateTime birthday) { this.birthday = birthday; }
         public void setHomeworkMarks(List<Int32> marks) { this.homeworkMarks = marks; }
         public void setCreditMarks(List<Int32> marks) { this.creditMarks = marks; }
         public void setExamsMarks(List<Int32> marks) { this.examMarks = marks; }
@@ -65,7 +65,7 @@ namespace Classes
         public string getLastName() { return this.lastName; }
         public string getPhone() { return this.phone; }
         public string getAdress() { return this.adress; }
-        public string getBirthday() { return this.birthday; }
+        public DateTime getBirthday() { return this.birthday; }
         #endregion
         //Show marks
         public void showMarks()
@@ -119,7 +119,7 @@ namespace dz4
             List<Int32> examMarks = new List<Int32>() { 4, 4, 3, 5 };
 
             //New object 2
-            Student st2 = new Student("Jesse", "Pinkman", "Bruce", "1483369", "9809 Margo Street", "September 24, 1984",hwMarks,creditMarks,examMarks);
+            Student st2 = new Student("Jesse", "Pinkman", "Bruce", "1483369", "9809 Margo Street", DateTime.Now.AddYears(2),hwMarks,creditMarks,examMarks);
             Console.WriteLine(st2);
             st2.showMarks();
 
